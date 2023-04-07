@@ -1,40 +1,115 @@
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 14:23:11 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 10:49:43 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:15:09 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 10:56:03 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:19:40 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 10:56:56 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:37:16 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:03:41 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:42:39 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:08:01 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:43:10 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:09:31 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:45:14 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:11:34 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
 
-Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Mar 31 15:58:39 2023
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:12:23 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:21:46 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:22:30 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:24:27 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:25:35 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:26:34 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:28:58 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:29:17 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:29:46 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:37:17 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:39:19 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:40:24 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Mon Apr  3 11:41:50 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Apr  7 08:45:46 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Apr  7 08:49:11 2023
+
+Set parameter LogFile to value "gurobi.log"
+Using license file C:\Users\GEO\gurobi.lic
+
+Gurobi 10.0.0 (win64, gurobi_cl) logging started Fri Apr  7 08:49:27 2023
 
 Set parameter LogFile to value "gurobi.log"
 Using license file C:\Users\GEO\gurobi.lic
