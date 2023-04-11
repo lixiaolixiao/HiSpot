@@ -135,27 +135,29 @@ class MaximizationAchievableGain(Flow):
 
         # Create variables
         xpi = {}
-        zones_v = list(range(self.num_vector))
-        for i in range(self.num_path):
+        yi={}
+        for i in self.num_path:
             for j in self.path_vector[i]:
                 name = 'Select_Path' + str(i) + '_' + str(j)
                 xpi[i, j] = pulp.LpVariable(name, 0, 1, LpBinary)
-        yi = LpVariable.dicts("Select_Vector", zones_v, cat="Binary")  # yi
+        for i in self.num_vector:
+            name = 'Y' + str(i)
+            yi[i] = pulp.LpVariable(name, 0, 1, pulp.LpBinary)
         self.xpi = xpi
         self.yi = yi
 
         # Set objective
-        prob += pulp.lpSum(self.vector_gain[p, i] * xpi[p, self.path_vector[p, i]]
-                           for p in range(self.num_path) for i in range(len(self.path_vector[p])))
+        prob += pulp.lpSum(self.vector_gain[p, i%2] * xpi[p, i]
+                           for p in self.num_path for i in self.path_vector[p])
 
         # Add constraints
-        prob += pulp.lpSum(yi[i] for i in zones_v) == self.num_choice
+        prob += pulp.lpSum(yi[i] for i in self.num_vector) == self.num_choice
 
-        for p in range(self.num_path):
+        for p in self.num_path:
             for k in self.path_vector[p]:
                 prob += pulp.lpSum(yi[i] for i in self.path_vector[p]) >= xpi[p, k]
 
-        for p in range(self.num_path):
+        for p in self.num_path:
             prob += pulp.lpSum(xpi[p, i] for i in self.path_vector[p]) <= 1
 
         # solve the problem
@@ -168,18 +170,20 @@ class MaximizationAchievableGain(Flow):
         if LpStatus[prob.status] == "Optimal":
             selected_path = []
             selected_vector = []
-            for i in range(self.num_path):
+            for i in self.num_path:
                 for j in self.path_vector[i]:
                     if xpi[i, j].varValue == 1:
                         selected_path.append(i)
                         break
-            for i in range(self.num_vector):
+            for i in self.num_vector:
                 if yi[i].varValue == 1:
                     selected_vector.append(i)
 
             print("Selected paths =", selected_path)
             print("Selected points =", selected_vector)
             print("Maximum flow =", value(prob.objective))
+
+        return selected_path, selected_vector
 
 
 class MinimumFacilityMaximumGain(Flow):
