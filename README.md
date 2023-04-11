@@ -132,6 +132,22 @@ see [notebook](https://github.com/HIGISX/HiSpot/blob/main/notebook/UFLP.ipynb) f
 - [MEXCLP](https://github.com/HIGISX/HiSpot/blob/main/notebook/MEXCLP.ipynb)
 - ...
 
+
+## Running Locally
+1. Clone the repo `git clone https://github.com/HIGISX/HiSpot`
+2. ...
+3. ...
+4. ...
+6. Launch jupyter notebook `jupyter notebook`
+
+You should now be able to run the example notebooks.
+
+You can choose to install and use another solver that is supported by [Pulp](https://github.com/coin-or/pulp):
+- [GLPK](https://www.gnu.org/software/glpk/) (included in conda environment)
+- [COIN-OR CBC](https://github.com/coin-or/Cbc)
+- [CPLEX](https://www.ibm.com/analytics/cplex-optimizer)
+- [Gurobi](https://www.gurobi.com/)
+
 ## Requirments
 
 ## Installation
