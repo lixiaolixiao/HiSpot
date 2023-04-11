@@ -185,14 +185,11 @@ class MaximizationAchievableGain(Flow):
 
         return selected_path, selected_vector
 
-
 class MinimumFacilityMaximumGain(Flow):
-    def __init__(self, num_path, num_vector, path_vector, vector_gain, global_gain, gain_e, solver):
+    def __init__(self, num_path, num_vector, path_vector, vector_gain,flow_gain, solver):
         super().__init__(num_path, num_vector, path_vector, solver)
-        self.vector_gain = vector_gain
-        self.global_gain = global_gain
-        self.gain_e = gain_e
-        self.flow_gain = (1 - self.gain_e) * self.global_gain
+        self.vector_gain=vector_gain
+        self.flow_gain = flow_gain
         self.name = 'Minimization of the Number of Facilities for Gain Maximization'
         self.xpi = None
         self.yi = None
@@ -203,28 +200,30 @@ class MinimumFacilityMaximumGain(Flow):
 
         # Create variables
         xpi = {}
-        zones_v = list(range(self.num_vector))
-        for i in range(self.num_path):
+        yi = {}
+        for i in self.num_path:
             for j in self.path_vector[i]:
                 name = 'Select_Path' + str(i) + '_' + str(j)
                 xpi[i, j] = pulp.LpVariable(name, 0, 1, LpBinary)
-        yi = LpVariable.dicts("Select_Vector", zones_v, cat="Binary")  # yi
+        for i in self.num_vector:
+            name = 'Y' + str(i)
+            yi[i] = pulp.LpVariable(name, 0, 1, pulp.LpBinary)
         self.xpi = xpi
         self.yi = yi
 
         # Set objective
-        prob += pulp.lpSum(yi[i] for i in zones_v)
+        prob += pulp.lpSum(yi[i] for i in self.num_vector)
 
         # Add constraints
-        for p in range(self.num_path):
+        for p in self.num_path:
             for k in self.path_vector[p]:
                 prob += pulp.lpSum(yi[i] for i in self.path_vector[p]) >= xpi[p, k]
 
-        for p in range(self.num_path):
+        for p in self.num_path:
             prob += pulp.lpSum(xpi[p, i] for i in self.path_vector[p]) <= 1
 
-        prob += pulp.lpSum(self.vector_gain[p, i] * xpi[p, self.path_vector[p, i]]
-                           for p in range(self.num_path) for i in range(len(self.path_vector[p]))) >= self.flow_gain
+        prob += pulp.lpSum(self.vector_gain[p, i%2] * xpi[p, i]
+                           for p in self.num_path for i in self.path_vector[p]) >= self.flow_gain
 
         # solve the problem
         prob.solve(self.solver)
@@ -233,18 +232,21 @@ class MinimumFacilityMaximumGain(Flow):
         print("Status:", LpStatus[prob.status])
 
         # Print results
+        selected_path = []
+        selected_vector = []
         if LpStatus[prob.status] == "Optimal":
-            selected_path = []
-            selected_vector = []
-            for i in range(self.num_path):
+
+            for i in self.num_path:
                 for j in self.path_vector[i]:
                     if xpi[i, j].varValue == 1:
                         selected_path.append(i)
                         break
-            for i in range(self.num_vector):
+            for i in self.num_vector:
                 if yi[i].varValue == 1:
                     selected_vector.append(i)
 
             print("Selected paths =", selected_path)
             print("Selected points =", selected_vector)
             print("Minimization of the Number of Facilities for Gain Maximization = ", value(prob.objective))
+
+        return selected_path, selected_vector
