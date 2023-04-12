@@ -149,6 +149,10 @@ You can choose to install and use another solver that is supported by [Pulp](htt
 - [Gurobi](https://www.gurobi.com/)
 
 ## Requirments
+-numpy
+-pandas
+-osmnx
+-pulp
 
 ## Installation
 ...
